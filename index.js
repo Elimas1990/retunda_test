@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
             return this.speach.split(" ").map(w => `${w} ${this.sound}`).join(" ");
         }
     }
-    let lion=new Animal('Leon','roar',`I'm a lion`)
+    let lion=new Animal('Lion','roar',`I'm a lion`)
     let tiger=new Animal('Tiger','grrr',`Lions suck`)
     let pato=new Animal('Duck','cuak',`Feline cant eat me`)
 
@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
 // URL PARSER EXERCISE
 app.get('/:version/api/:collection/:id', function (req, res) {
  
-    const q=rq.query
+    const q=req.query
     const p=req.params
 
     res.send(Object.assign(p,q))
